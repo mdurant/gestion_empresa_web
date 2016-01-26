@@ -1,0 +1,2 @@
+[11-Apr-2015 20:24:32 America/Santiago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/gestion/area/boleta/boletadet_sql.php on line 73
+[11-Apr-2015 20:24:32 America/Santiago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/gestion/area/boleta/boletadet_sql.php on line 73

@@ -1,0 +1,4 @@
+[04-Nov-2014 09:00:07 Chile/Continental] PHP Warning:  Missing argument 14 for cargar_cotizacion::insertar_eguia(), called in /home/cne9836/public_html/inoxpoblete/area/guiadespacho/insert_factura_sql.php on line 33 and defined in /home/cne9836/public_html/inoxpoblete/area/guiadespacho/guia_sql.php on line 35
+[04-Nov-2014 09:00:07 Chile/Continental] PHP Warning:  Division by zero in /home/cne9836/public_html/inoxpoblete/area/guiadespacho/insert_factura_sql.php on line 61
+[04-Nov-2014 11:57:31 Chile/Continental] PHP Warning:  Missing argument 14 for cargar_cotizacion::insertar_eguia(), called in /home/cne9836/public_html/inoxpoblete/area/guiadespacho/insert_factura_sql.php on line 33 and defined in /home/cne9836/public_html/inoxpoblete/area/guiadespacho/guia_sql.php on line 35
+[04-Nov-2014 11:57:31 Chile/Continental] PHP Warning:  Division by zero in /home/cne9836/public_html/inoxpoblete/area/guiadespacho/insert_factura_sql.php on line 61

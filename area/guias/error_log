@@ -1,0 +1,2 @@
+[04-Dec-2014 16:26:29 UTC] PHP Fatal error:  Call to undefined method select::proyetos() in /home/cne9836/public_html/inoxpoblete/area/OrdenTrabajo/orden_main.php on line 74
+[09-Dec-2014 23:20:24 UTC] PHP Fatal error:  Function name must be a string in /home/cne9836/public_html/inoxpoblete/area/OrdenTrabajo/select_orden.php on line 29

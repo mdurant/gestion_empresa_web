@@ -1,0 +1,59 @@
+[03-Nov-2014 02:43:59 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 113
+[03-Nov-2014 02:44:46 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:44:50 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:44:51 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:44:51 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:44:52 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:44:56 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:45:07 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:45:10 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 02:45:38 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[03-Nov-2014 13:05:56 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 113
+[03-Nov-2014 18:56:34 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 113
+[03-Nov-2014 18:57:48 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 113
+[03-Nov-2014 19:23:20 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 113
+[03-Nov-2014 19:41:07 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 113
+[08-Nov-2014 16:35:08 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 45
+[08-Nov-2014 16:40:16 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 47
+[08-Nov-2014 17:03:29 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 47
+[08-Nov-2014 17:03:29 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 47
+[08-Nov-2014 17:05:47 UTC] PHP Parse error:  syntax error, unexpected 'for' (T_FOR) in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 47
+[08-Nov-2014 19:08:26 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 67
+[08-Nov-2014 19:15:23 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 67
+[08-Nov-2014 19:18:03 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 67
+[08-Nov-2014 16:32:38 Chile/Continental] PHP Fatal error:  Call to undefined function NOW() in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 37
+[08-Nov-2014 16:34:24 Chile/Continental] PHP Fatal error:  Call to undefined function NOW() in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 36
+[08-Nov-2014 16:36:15 Chile/Continental] PHP Fatal error:  Call to undefined function now() in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 36
+[08-Nov-2014 16:36:15 Chile/Continental] PHP Fatal error:  Call to undefined function now() in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 36
+[08-Nov-2014 16:39:01 Chile/Continental] PHP Fatal error:  Call to undefined function 2014-11-08 16:39:01() in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 37
+[08-Nov-2014 16:39:11 Chile/Continental] PHP Fatal error:  Call to undefined function 2014-11-08 16:39:11() in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 37
+[08-Nov-2014 16:42:51 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 16:42:51 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 16:42:51 Chile/Continental] PHP Warning:  Division by zero in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 75
+[08-Nov-2014 16:53:07 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 16:53:07 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 16:53:07 Chile/Continental] PHP Warning:  Division by zero in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 75
+[08-Nov-2014 17:04:48 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 17:04:48 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 17:04:48 Chile/Continental] PHP Warning:  Division by zero in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 75
+[08-Nov-2014 17:04:53 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 17:04:53 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 17:04:53 Chile/Continental] PHP Warning:  Division by zero in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 75
+[08-Nov-2014 17:04:55 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 17:04:55 Chile/Continental] PHP Warning:  Missing argument 15 for cargar_compra::insertar_dcompra(), called in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 70 and defined in /home/cne9836/public_html/inoxpoblete/area/compras/compra_sql.php on line 62
+[08-Nov-2014 17:04:55 Chile/Continental] PHP Warning:  Division by zero in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 75
+[09-Nov-2014 15:21:37 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 64
+[09-Nov-2014 15:21:37 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/comprasql_sql.php on line 106
+[09-Nov-2014 13:18:53 Chile/Continental] PHP Fatal error:  Unsupported operand types in /home/cne9836/public_html/inoxpoblete/area/compras/insert_compra_sql.php on line 47
+[10-Nov-2014 14:43:02 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/compradet_sql.php on line 31
+[10-Nov-2014 14:43:02 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/compras/compradet_sql.php on line 67
+[28-Dec-2015 22:03:16 America/Santiago] PHP Notice:  Undefined index: IDEmpresa in /home/cne9836/public_html/gestion/area/compras-boleta/compracrud_main.php on line 10
+[28-Dec-2015 22:03:16 America/Santiago] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[28-Dec-2015 22:03:16 America/Santiago] PHP Notice:  Undefined index: rutproveedor in /home/cne9836/public_html/gestion/area/compras-boleta/comprasql_sql.php on line 14
+[28-Dec-2015 22:03:16 America/Santiago] PHP Notice:  Undefined index: inactivo in /home/cne9836/public_html/gestion/area/compras-boleta/comprasql_sql.php on line 22
+[28-Dec-2015 22:03:16 America/Santiago] PHP Notice:  Undefined index: inactivo in /home/cne9836/public_html/gestion/area/compras-boleta/comprasql_sql.php on line 22
+[28-Dec-2015 22:03:16 America/Santiago] PHP Notice:  Undefined variable: dat in /home/cne9836/public_html/gestion/area/compras-boleta/comprasql_sql.php on line 54
+[28-Dec-2015 22:03:16 America/Santiago] PHP Notice:  Undefined variable: radiosss in /home/cne9836/public_html/gestion/area/compras-boleta/comprasql_sql.php on line 57
+[28-Dec-2015 22:03:16 America/Santiago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/cne9836/public_html/gestion/conexion/conexion.php on line 12
+[28-Dec-2015 22:03:16 America/Santiago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/cne9836/public_html/gestion/conexion/conexion.php on line 12
+[28-Dec-2015 22:03:16 America/Santiago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/cne9836/public_html/gestion/conexion/conexion.php on line 12

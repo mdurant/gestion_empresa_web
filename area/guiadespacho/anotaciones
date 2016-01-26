@@ -1,0 +1,156 @@
+ $(function() {
+
+  // Moneda
+  
+  function Moneda(entrada){
+					var num = entrada.replace(/\./g,"");
+					if(!isNaN(num)){
+					num = num.toString().split("").reverse().join("").replace(/(?=\d*\.?)(\d{3})/g,"$1.");
+					num = num.split("").reverse().join("").replace(/^[\.]/,"");
+					entrada = num;
+					}else{
+					entrada = input.value.replace(/[^\d\.]*/g,"");
+					}
+					return entrada;
+				}			
+
+  
+    $("#proyecto").select2();
+    $("#motivo").select2();
+    $("#autoriza").select2();
+    
+    $('#rut_chofer').Rut({
+      on_error: function(){ alert('Rut del Chofer es Incorrecto !'); }
+      
+});
+    
+
+
+      $("#btn-volver").on("click", function() {
+
+            window.history.back()
+
+          //window.location="ordencrud_main.php";
+      });
+
+
+      $("#tempresa").val("<?=$ord[0]['id_empresa']?>");
+      $("#clientes").val("<?=$ord[0]['id_cliente']?>");
+
+
+      for (i = 0; i < $("#ctrl_pases").val(); i++) {
+          $("select#bodega").eq(i).val($("select#bodega").eq(i).parent().parent().parent().children("td:eq(5)").text());
+      }
+
+
+      //trabajo con el nuevo modal
+
+
+
+      //clientes
+      $("#dialogcliente").dialog({
+          autoOpen: false,
+          width: 1000,
+          height: 500,
+          position: ['middle', 20],
+          show: {
+              effect: "fade",
+              duration: 500
+          },
+          hide: {
+              effect: "fade",
+              duration: 500
+          },
+          modal: true,
+          buttons: {
+              "Cerrar": function() {
+                  $.ajax({
+
+                      async: true,
+                      cache: false,
+                      type: "GET",
+                      dataType: "json",
+                      url: "select_orden.php?action=clientes",
+                      success: function(response) {
+                          clientess = response.Options;
+                          $("#clientes").empty();
+                          for (var i = 0; i < clientess.length; i++) {
+                              $("#clientes").append("<option value='" + clientess[i].Value + "'>" + clientess[i].DisplayText + "</option>")
+                          }
+                      }
+                  });
+                  $("#dialogcliente").dialog("close");
+              }
+          }
+      });
+
+      $("#opencliente").on("click", function() {
+
+          $("#dialogcliente").dialog("open");
+      });
+
+
+
+      $("#modal1").dialog({
+          autoOpen: false,
+          width: 1000,
+          heigth: 700,
+          position: ['middle', 20],
+          show: {
+              effect: "fade",
+              duration: 500
+          },
+          hide: {
+              effect: "fade",
+              duration: 500
+          },
+          modal: true,
+          buttons: {
+              "Cerrar": function() {
+                  $tr.find("#descri").val($("#descripciones_dialog").val());
+                  $(this).dialog("close");
+                  $("#descripciones_dialog").val("");
+
+              }
+
+          }
+      });
+
+      $(".btn-descrip").on("click", function() {
+
+          $tr = $(this).parent().parent();
+          $("#descripciones_dialog").val($tr.find("#descri").val());
+          $("#modal1").dialog("open");
+
+      });
+
+
+      //Calcular el total de los valores
+
+      function calcular_total() {
+          var importe_total = 0
+          $(".valor").each(
+
+          function(index, value) {
+              importe_total = importe_total + eval($(this).val());
+          });
+
+      }
+
+
+        //validar para cliente
+        idcliente = '<?=$ord[0]["id_cliente"]?>';
+
+        if(idcliente=='')
+        {
+
+        }else
+        {
+            $("#clientes").val(idcliente);
+        }
+
+
+
+  });
+
+  calcular_total();

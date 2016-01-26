@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+#tbl_cab
+{
+	width:80%;
+	/*background-color:#EFEFEF;*/
+	margin:auto;
+	height:46px
+}
+#tbl_bod
+{
+	width:100%;
+}
+#cuerpo
+{
+	height:25em;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	width:80%;
+	margin:auto;
+}
+/*#contenedor
+{
+	background-color:#F8F8F8;
+	height:45em;
+	width:90%;
+	margin:0 auto;
+	border-radius:1em;
+	box-shadow:0em 0em 1em hsla(0,0%,0%,1);
+}*/
+.divcabecera
+{
+	margin:auto;
+	width:80%;
+}
+#cabecera
+{
+	margin:auto;
+	width:80%;
+}
+#tbl_pri
+{
+
+}
+#pie
+{
+	width:80%;
+	margin:0 auto;
+}
+#tbl_foot
+{
+	width:100%;
+}
+.clas_display
+{
+	display:inline-block;
+}
+.clas_block
+{
+	display:block;
+	margin:1em;
+}
+.separar
+{
+	margin-left:1em;
+}
+.caja_cod
+{
+	border: none;
+	width: 7em;
+}
+.caja
+{
+	border: none;
+}
+

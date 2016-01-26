@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rp_cotizacion" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="680a213e-a839-461b-a5c4-5dfbc71097b9">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="175"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="7681c95e-55d0-4cc3-bfd1-db1e887af0f2"/>
+	<parameter name="hoy" class="java.lang.String"/>
+	<parameter name="id_inventario" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT inventario.id_inventario,
+	inventario.dia AS Dia,
+	inventario.hora AS Hora,
+	inventario.responsable AS Responsable,
+	inventario.estado AS Estado,
+	product.ProductName AS Producto,
+	almacen.Descripcion AS Descripcion,
+	inventario.estado_act AS inventario_estado_act,
+	dinventario.existencia AS Existencia,
+	dinventario.haber AS Haber,
+	dinventario.debe AS Debe,
+	dinventario.saldo AS Saldo,
+	dinventario.producto2 AS Producto2,
+	product.IDProduct AS IDProducto
+FROM inventario inventario
+	 INNER JOIN dinventario dinventario ON inventario.id_inventario = dinventario.id_inventario
+	 INNER JOIN product ON product.IDProduct = dinventario.producto
+	 INNER JOIN almacen ON almacen.IdAlmacen = dinventario.id_bodega
+where inventario.id_inventario=$P{id_inventario}]]>
+	</queryString>
+	<field name="id_inventario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dia" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Hora" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Responsable" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Producto" class="java.lang.String"/>
+	<field name="Descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inventario_estado_act" class="java.lang.String"/>
+	<field name="Existencia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Haber" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Debe" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Saldo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Producto2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IDProducto" class="java.lang.Integer"/>
+	<variable name="id_inventario_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{id_inventario}]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="138">
+			<rectangle>
+				<reportElement x="616" y="116" width="136" height="20" uuid="cde5d304-1d66-4357-b04f-6137d55ce173"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="0" width="750" height="20" uuid="a443ac77-adfc-4982-ba16-6b402faa5800"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Chek List Inventario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="655" y="12" width="51" height="13" uuid="3f2cda4c-42e8-4e1e-8789-67e085a10743"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Generado el:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="707" y="12" width="36" height="13" uuid="f1df1178-27d3-423c-aa7c-455062b7a81f"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hoy}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="726" y="0" width="17" height="12" uuid="322f31df-6f4e-4c3b-b20d-db361d851183"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="695" y="0" width="13" height="12" uuid="b59f9f98-d40b-4074-96a7-c5d04c74354e"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="677" y="0" width="24" height="12" uuid="8e934d4a-2033-46ec-8af6-828f47e46cfd"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Pag.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="708" y="0" width="18" height="12" uuid="8fe37431-748c-446d-993b-19bb8df16ce4"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="41" width="121" height="20" uuid="1c7d8b9e-527c-4030-ad4d-e6d8a6d9891d"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Total de Productos:]]></text>
+			</staticText>
+			<textField evaluationTime="Page">
+				<reportElement x="123" y="41" width="100" height="20" uuid="3ba0362c-d18b-4e6e-a6db-3d6cf999cbde"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{id_inventario_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="61" width="121" height="20" uuid="899e6c8c-1da6-45c9-806e-980d4e3b363f"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Día Inventario:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="123" y="61" width="100" height="20" uuid="1f9600a1-d723-4725-8480-08d18a53e1cb"/>
+				<textFieldExpression><![CDATA[$F{Dia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="81" width="121" height="20" uuid="67548a65-b9c2-4ef7-a171-1036481aea1a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Hora Inventario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="123" y="81" width="100" height="20" uuid="c1e62eee-e24e-4caf-9333-360a66ad9d1b"/>
+				<textFieldExpression><![CDATA[$F{Hora}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="104" width="752" height="1" uuid="b5d07e00-71c9-4339-afee-982d47b01f28"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="524" y="41" width="100" height="20" uuid="889512c7-6116-499c-9c11-45997641f78a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Responsable :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="624" y="41" width="121" height="20" uuid="3ec8dcd7-522e-4255-a398-d90a2cf010fe"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{Responsable}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="2" y="116" width="477" height="20" uuid="908969d2-1d6b-45f1-a7c9-639f553dcb96"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="119" width="477" height="14" uuid="3e68e5fe-29a4-41a8-ab74-7a5b5f7e08fe"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="524" y="61" width="100" height="20" uuid="c00e25f4-e25f-4c7d-af5c-725bfde6d867"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Bodega:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="624" y="61" width="121" height="20" uuid="3dbe680a-af75-4324-b9f5-baab6605595b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="479" y="116" width="137" height="20" uuid="ccdd4249-15a4-4cf6-8fec-4689cc0e027c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="479" y="119" width="137" height="14" uuid="c7cf63d0-8d75-4f69-8725-358d778e115d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[STOCK FISICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="616" y="119" width="136" height="14" uuid="59036cd5-fbf9-47f6-9e13-394c806bbb64"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[STOCK REAL]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="3" width="454" height="20" uuid="8a78c4cf-5807-4025-aa6b-426efe5a5215"/>
+				<textFieldExpression><![CDATA[$F{Producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="3" width="124" height="20" uuid="c1215e9e-f550-440f-894a-81731fa4e287"/>
+				<textFieldExpression><![CDATA[$F{Debe}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="622" y="22" width="128" height="1" uuid="51dce0be-5b07-44f8-943f-9430ed158499"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<elementGroup/>
+			<staticText>
+				<reportElement x="211" y="8" width="271" height="12" forecolor="#666666" uuid="7a400469-2616-4d2a-a42b-098449511046"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gestión Administrativa]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

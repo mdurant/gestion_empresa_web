@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rp_detalle_productos_OT" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="27e39f78-ca7b-483d-921b-ca3a9627ad4a">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="1145"/>
+	<property name="ireport.y" value="74"/>
+	<subDataset name="Table Dataset 1" uuid="2e359405-1c5f-4a24-b6e3-c20539f23d7d"/>
+	<parameter name="parametro_orden" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hoy" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT dorden.posicion,
+	dorden.Codigo,
+	dorden.descripcion,
+	dorden.cantidad,
+	eorden.contador,
+	dorden.id_orden,
+	eorden.id_orden
+FROM eorden
+INNER JOIN dorden ON
+eorden.id_orden = dorden.id_orden
+WHERE dorden.id_orden=$P{parametro_orden}]]>
+	</queryString>
+	<field name="posicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contador" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_orden" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="id_orden_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{id_orden}]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="166" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="69" width="185" height="20" uuid="e8070439-8afe-4f89-8cea-937b8e0c8a74"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETALLE PRODUCTOS ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="69" width="103" height="20" uuid="5a4e7bf5-6b0c-48f2-9d8e-1fd24fb35e35"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEGÚN OT Nº]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="472" y="69" width="100" height="20" forecolor="#FF0000" uuid="e9df0542-0e1c-4bd1-aaec-bcd74f92df55"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="163" height="13" uuid="4ca5027d-34c6-49f1-8e9c-aad0208c0245"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gestión Administrativa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="13" width="163" height="13" uuid="45050e95-3004-45c9-81ec-543c0a74f8c3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[REPORTE INTERNO DE DETALLE DE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="163" height="13" uuid="ad5a2d62-a00a-410c-ae93-38b7137a82fd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ENTREGA PRODUCTOS POR O.T.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="1" width="51" height="13" uuid="09d5894a-25ad-4b7e-a5cd-573f4785108d"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Generado el:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="504" y="14" width="24" height="12" uuid="ed4f7394-cf8a-44af-8aa9-77169031a013"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Pag.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="535" y="14" width="18" height="12" uuid="23868f04-26e8-4d27-b591-7e6359420991"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="522" y="14" width="13" height="12" uuid="32402ed2-d118-488e-a694-9830fd9bfd39"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="553" y="14" width="17" height="12" uuid="d309457f-7407-46f1-91a7-9085e6834d6e"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="144" width="78" height="20" uuid="76b68fac-54f8-475b-8985-93332165aae6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="78" y="144" width="110" height="20" uuid="34add70d-35ff-4efb-a5fc-90fba827ec8d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="188" y="144" width="384" height="20" uuid="758520ac-de87-4d31-b0bd-c1af7e4afa38"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="146" width="78" height="20" uuid="1745a274-3070-48b2-9d42-b303211a5149"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="146" width="107" height="20" uuid="7ac79947-4c2d-4b6e-921f-680b0a55b070"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="146" width="382" height="20" uuid="f7e3b596-bfca-458b-b3c8-fec0c36d4613"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PRODUCTO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="522" y="1" width="48" height="13" uuid="e141084f-bf2a-4948-a514-0e99b056f9c0"/>
+				<textElement textAlignment="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hoy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="1" width="78" height="20" uuid="8ac452bb-af62-4a61-9bc1-2670f9f9b052"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="1" width="106" height="20" uuid="569262c9-e5ab-4567-9ff6-37f4b2e9111b"/>
+				<textFieldExpression><![CDATA[$F{Codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="1" width="382" height="20" uuid="3dbe6d4a-2baf-499a-ad75-fc4de2b6b7e3"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="22" width="572" height="1" uuid="7d2103a1-dac0-48e8-89b2-75de1d4393db"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField evaluationTime="Page">
+				<reportElement x="524" y="0" width="48" height="20" uuid="37eed0b8-afa1-4198-85ca-52d4b82da513"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{id_orden_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="0" width="138" height="20" uuid="7b705667-e284-4b89-aba8-3d4ed5330bb5"/>
+				<text><![CDATA[Nº TOTAL DE PRODUCTOS:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="388" y="20" width="184" height="1" uuid="f4feeb06-c148-4c08-8373-37afe8ac73bb"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

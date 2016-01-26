@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS THEME CRUD */
+#btnTable
+{
+	width:70%;
+	margin:1em auto 1em auto;
+	padding-top:.5em;
+	padding-bottom:.5em;
+	border:solid .2em #f0f0f0;
+}
+#tblDatos
+{
+	width:70%;
+	margin:0 auto;
+}
+
+/*controlar el ancho del modal de twiter*/
+#mdl.modal {
+    /* new custom width */
+    width: 500px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -280px;
+	max-height: 1020px;
+}
+#mdl.modal, .modal.fade.in {
+    top: 5%; /* was 10% */
+	left: 58%;
+}
+#opt-busqueda
+{
+	margin-top:.8em;
+}
+#opt-principal
+{
+	display:inline-block; 
+	text-align:right;
+	margin-left:4em;
+}
+
+#mdl_confirm.modal
+{
+	   /* new custom width */
+    width: 400px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -280px;
+	max-height: 800px;
+	
+}
+
+#mdl_confirm.modal, #mdl_confirm.modal.fade.in {
+    top: 20%; /* was 10% */
+	left: 55%;
+}
+#secciones
+{
+	margin-top: .7em; 
+	margin-right:1em;
+}

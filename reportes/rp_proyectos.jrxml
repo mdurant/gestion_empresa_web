@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rp_proyectos" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6f847b4-f170-46a0-bd40-bdcedc642361">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT a.id_proyecto,
+	a.nombre_proyecto,
+	a.fecha_inicio,
+	a.fecha_compromiso,
+	b.Cliente,
+	c.id_orden,
+	c.contador,
+	c.folio,
+	c.fecha_entrega,
+	c.jefe_responsable,
+	c.glosa,
+	c.total,
+	c.iva,
+	c.total_gral,
+	d.id_dorden,
+	d.posicion,
+	d.Codigo,
+	d.descripcion,
+	d.cantidad,
+	d.valor,
+	d.sub_total
+FROM proyectos a
+INNER JOIN customers b ON a.id_cliente = b.IDCliente
+	 INNER JOIN eorden c ON c.id_proyecto = a.id_proyecto
+	 INNER JOIN dorden d ON c.id_orden = d.id_orden
+where
+c.contador =  $P{id}]]>
+	</queryString>
+	<field name="id_proyecto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_proyecto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_inicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_compromiso" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_orden" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contador" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="folio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_entrega" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jefe_responsable" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="glosa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Neto de la OT]]></fieldDescription>
+	</field>
+	<field name="iva" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Iva del Neto]]></fieldDescription>
+	</field>
+	<field name="total_gral" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Total General]]></fieldDescription>
+	</field>
+	<field name="id_dorden" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="posicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sub_total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Sub Total de cada producto para los Reportes]]></fieldDescription>
+	</field>
+	<variable name="Codigo_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{Codigo}]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="243" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="130" height="40" uuid="49422bc8-8df0-4750-be45-2158cbde6dd8"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Sociedad Inox Poblete
+Sistema de Gestión Interna
+78.846.290-5
+www.inoxpoblete.cl
+]]></text>
+			</staticText>
+			<textField pattern="M/d/yy h:mm a">
+				<reportElement x="482" y="0" width="89" height="30" uuid="02699b45-c756-4ec5-a9fa-ee25c8fa177f"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="30" width="270" height="20" uuid="49550b20-3d20-40c8-b339-a843af39812f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE GASTOS DE PROYECTO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-8" y="50" width="580" height="3" uuid="da8f67d5-b7d6-4ac7-8df6-78da857b28d1"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="80" width="70" height="20" uuid="c3e9df2f-3393-43ff-bce4-f4ecaa850de3"/>
+				<textElement>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Proyecto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="100" width="70" height="20" uuid="22e03cf3-16d9-4142-8121-9bb72d3f5b96"/>
+				<textElement>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Encargado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="120" width="100" height="20" uuid="79cec1a9-2673-4b9a-b71d-6e8db693845f"/>
+				<textElement>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Fecha Compromiso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="140" width="70" height="20" uuid="e69084be-c547-4c56-97c5-bf825308b40d"/>
+				<textElement>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="190" width="70" height="20" backcolor="#DBDBDB" uuid="4848188a-bec2-4d5e-ab8f-f68663f151b0"/>
+				<textElement>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="220" width="59" height="20" backcolor="#DBDBDB" uuid="88ecbbbb-e8cb-43b2-91a9-dcce5ff9c5ed"/>
+				<textElement textAlignment="Center">
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[CANT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="60" y="220" width="420" height="20" backcolor="#DBDBDB" uuid="1e30b11e-7dba-4c05-a343-1ae36636abdd"/>
+				<textElement textAlignment="Center">
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[DETALLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="480" y="220" width="91" height="20" backcolor="#DBDBDB" uuid="57f5417d-8ea6-405c-aae2-352e0e897a12"/>
+				<textElement textAlignment="Center">
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[COSTO DIRECTO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="80" width="429" height="20" uuid="0ba97b36-f70c-4188-8bb1-b20d34cd617a"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_proyecto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="100" width="429" height="20" uuid="e2019a88-6afd-4b0e-ba58-62f9fbcd028a"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jefe_responsable}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="130" y="120" width="187" height="20" uuid="dc56f498-d9a0-4baf-a16b-4b8ab9910344"/>
+				<textFieldExpression><![CDATA[$F{fecha_entrega}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="140" width="429" height="20" uuid="de416c89-fca6-4fa8-af53-68527383bb09"/>
+				<textFieldExpression><![CDATA[$F{Cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="447" y="170" width="125" height="20" uuid="b6648187-802c-459f-a64d-4d807a12c08b"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="356" y="170" width="91" height="20" backcolor="#DBDBDB" uuid="aab6aa0b-d162-4f77-a97e-3c6640d4336b"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Nº INTERNO]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="66" y="2" width="414" height="20" uuid="0565dcbd-8325-46b1-a354-f023826d7f0a"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="59" height="20" uuid="488d09b2-a9ce-4de9-84db-9d42ade69daf"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0">
+				<reportElement x="494" y="2" width="77" height="20" uuid="4ecbb6de-381e-4119-bc1d-ed2db6565575"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{sub_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="92">
+			<textField>
+				<reportElement x="80" y="21" width="100" height="20" uuid="1e23eb4f-e8cd-4f12-8f68-05802d5ca5b1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Codigo_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0">
+				<reportElement x="468" y="21" width="100" height="20" uuid="daa33b59-8e66-4bf3-b881-4d437de22e63"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_gral}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="21" width="70" height="20" backcolor="#DBDBDB" uuid="dd7e969b-8b4d-419e-9e74-eb3f3b5badfd"/>
+				<textElement>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Total Items]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="372" y="21" width="96" height="20" backcolor="#DBDBDB" uuid="e9bcc184-fb55-4e80-a825-1e5b0c6c8aac"/>
+				<textElement>
+					<paragraph lineSpacingSize="0.8"/>
+				</textElement>
+				<text><![CDATA[Costo Estimado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="17" width="572" height="1" uuid="1250095c-bffa-4b2e-ba78-593530e2bf5b"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

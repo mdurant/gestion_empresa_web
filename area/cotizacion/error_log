@@ -1,0 +1,6 @@
+[28-Dec-2015 23:35:01 America/Santiago] PHP Notice:  Undefined index: IDEmpresa in /home/cne9836/public_html/gestion/area/cotizacion/cotizacioncrud_main.php on line 10
+[28-Dec-2015 23:35:02 America/Santiago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/cne9836/public_html/gestion/conexion/conexion.php on line 12
+[28-Dec-2015 23:35:02 America/Santiago] PHP Notice:  Undefined variable: seleccionar in /home/cne9836/public_html/gestion/area/cotizacion/cotizacionsql_sql.php on line 71
+[28-Dec-2015 23:35:02 America/Santiago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/cne9836/public_html/gestion/conexion/conexion.php on line 12
+[28-Dec-2015 23:35:02 America/Santiago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/cne9836/public_html/gestion/conexion/conexion.php on line 12
+[28-Dec-2015 23:35:02 America/Santiago] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/cne9836/public_html/gestion/conexion/conexion.php on line 12

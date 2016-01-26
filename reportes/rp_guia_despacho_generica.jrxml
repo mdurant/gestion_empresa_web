@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rp_guia_despacho_generica" pageWidth="612" pageHeight="776" columnWidth="556" leftMargin="42" rightMargin="14" topMargin="198" bottomMargin="20" uuid="680a213e-a839-461b-a5c4-5dfbc71097b9">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="7681c95e-55d0-4cc3-bfd1-db1e887af0f2"/>
+	<parameter name="Numero" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT eguiadespacho_general.IdEGuiaDespacho_General,
+	eguiadespacho_general.Numero,
+	eguiadespacho_general.Folio,
+	eguiadespacho_general.Neto AS netog,
+	eguiadespacho_general.Iva AS ivag,
+	eguiadespacho_general.Impuesto,
+	eguiadespacho_general.Total AS totalg,
+	eguiadespacho_general.FechaCreacion,
+	eguiadespacho_general.FechaFacturacion,
+	eguiadespacho_general.glosa,
+	eguiadespacho_general.nom_chofer,
+	eguiadespacho_general.rut_chofer,
+	eguiadespacho_general.patente,
+	eguiadespacho_general.glosa,
+	motivo_guia.nombre_motivo,
+	dguiadespacho_general.Codigo,
+	product.ProductName AS nombre_producto,
+	dguiadespacho_general.Descripcion,
+	dguiadespacho_general.Cantidad,
+	dguiadespacho_general.Descuento,
+	dguiadespacho_general.Neto AS netop,
+	dguiadespacho_general.Iva AS ivap,
+	dguiadespacho_general.Total AS totalp,
+	customers.rut AS rut_cli,
+	customers.Cliente,
+	customers.Empresa,
+	customers.DomicilioEmpresa,
+	customers.Telefono,
+	customers.TelefonoContacto,
+	customers.Giro,
+	customers.EmailContacto,
+	customers.EmailEmpresa,
+	customers.Contacto AS contacto_cli,
+	formapago.Nombre AS forma_pago,
+	empresa.RUT AS rut_emp,
+	empresa.RazonSocial AS nombre_empresa,
+	empresa.Giro AS giro_emp,
+	empresa.Descripcion AS descripcion_empresa,
+	empresa.Domicilio AS Domicilio_emp,
+	empresa.Telefono1 AS Telefono_emp,
+	empresa.Telefono2 AS Telefono2_emp
+FROM eguiadespacho_general LEFT OUTER JOIN motivo_guia ON motivo_guia.IDMotivo = eguiadespacho_general.IDMotivo
+	 LEFT OUTER JOIN dguiadespacho_general ON dguiadespacho_general.IdEGuiaDespacho_General = eguiadespacho_general.IdEGuiaDespacho_General
+	 LEFT OUTER JOIN formapago ON formapago.IdFormaPago = eguiadespacho_general.IdFormaPago
+	 LEFT OUTER JOIN empresa ON empresa.IDEmpresa = eguiadespacho_general.IDEmpresa
+	 LEFT OUTER JOIN product ON product.CodeBar = dguiadespacho_general.Codigo
+	 INNER JOIN proyectos ON eguiadespacho_general.Referencia = proyectos.id_proyecto
+	 INNER JOIN customers ON proyectos.id_cliente = customers.IDCliente
+WHERE
+dguiadespacho_general.IdEGuiaDespacho_General =$P{Numero}]]>
+	</queryString>
+	<field name="IdEGuiaDespacho_General" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Numero" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Folio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="netog" class="java.lang.Integer"/>
+	<field name="ivag" class="java.lang.Integer"/>
+	<field name="Impuesto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalg" class="java.lang.Integer"/>
+	<field name="FechaCreacion" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FechaFacturacion" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="glosa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom_chofer" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rut_chofer" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="patente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_motivo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_producto" class="java.lang.String"/>
+	<field name="Descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Descuento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="netop" class="java.lang.Integer"/>
+	<field name="ivap" class="java.lang.Integer"/>
+	<field name="totalp" class="java.lang.Integer"/>
+	<field name="rut_cli" class="java.lang.String"/>
+	<field name="Cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DomicilioEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TelefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Giro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EmailContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EmailEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contacto_cli" class="java.lang.String"/>
+	<field name="forma_pago" class="java.lang.String"/>
+	<field name="rut_emp" class="java.lang.String"/>
+	<field name="nombre_empresa" class="java.lang.String"/>
+	<field name="giro_emp" class="java.lang.String"/>
+	<field name="descripcion_empresa" class="java.lang.String"/>
+	<field name="Domicilio_emp" class="java.lang.String"/>
+	<field name="Telefono_emp" class="java.lang.String"/>
+	<field name="Telefono2_emp" class="java.lang.String"/>
+	<pageHeader>
+		<band height="123">
+			<textField>
+				<reportElement x="450" y="-110" width="95" height="18" forecolor="#FF0000" uuid="a15f0055-6476-4b80-a257-2b1a50af29b0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Folio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="55" y="-22" width="378" height="15" uuid="0435c640-4ab5-47dd-80e7-87983e322a8f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FechaFacturacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="-2" width="375" height="15" uuid="814bce2d-8581-4380-ba54-e4f6056640b3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="86" height="15" uuid="7c4cc668-1ce7-409b-a3d1-386128f31a6d">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rut_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="18" width="376" height="15" uuid="d085d35c-e644-4bf7-8c99-6a49546aa5aa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DomicilioEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="38" width="376" height="15" uuid="3e238376-e19f-4c8b-9c1e-340a16132520"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Giro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="40" width="86" height="15" uuid="02cf941b-d860-45d8-a689-a6a139ff44f9">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefono_emp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="58" width="293" height="15" uuid="fb9f607e-f340-45f3-9806-30fc9756cad6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Immediate">
+			<textField>
+				<reportElement x="68" y="0" width="382" height="15" uuid="a081358c-f06b-43e9-b8f0-5f0ea06f005d">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="450" y="0" width="89" height="15" uuid="c84e77e6-06d6-418d-a468-701369371375">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netop}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-3" y="0" width="60" height="15" uuid="348e68bb-50f6-4493-a1a9-8750185d9ca6">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="59" splitType="Stretch">
+			<elementGroup/>
+			<textField>
+				<reportElement x="200" y="0" width="150" height="15" uuid="1c90f015-d905-4d7d-98c4-4c012363e25e">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_motivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="15" width="485" height="15" uuid="952fc677-abd9-4eb8-b019-d805b3aa31b9">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{glosa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="30" width="117" height="15" uuid="643681d7-87e0-4221-9069-d3b4146b9dab">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom_chofer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="30" width="117" height="15" uuid="9809bcab-4237-4ca1-9d8d-b0ef3db344b9">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rut_chofer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="30" width="117" height="15" uuid="96efc466-cd1e-41fd-a02d-51c5c44bfa9a">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

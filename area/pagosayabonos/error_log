@@ -1,0 +1,25 @@
+[23-Nov-2014 21:22:49 UTC] PHP Fatal error:  Call to undefined method funciones::Proveedores() in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonoscrud_main.php on line 10
+[23-Nov-2014 21:52:32 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonosql_sql.php on line 93
+[01-Dec-2014 20:45:52 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[01-Dec-2014 20:46:24 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonosdet_sql.php on line 34
+[01-Dec-2014 20:46:24 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonosdet_sql.php on line 77
+[01-Dec-2014 20:46:27 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonosdet_sql.php on line 34
+[01-Dec-2014 20:46:27 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonosdet_sql.php on line 77
+[05-Dec-2014 11:56:21 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[08-Dec-2014 21:57:56 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[08-Dec-2014 21:58:33 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[09-Dec-2014 12:38:58 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[10-Dec-2014 00:30:51 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[10-Dec-2014 17:46:37 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[10-Dec-2014 17:55:25 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[11-Dec-2014 14:49:42 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[11-Dec-2014 14:51:03 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[11-Dec-2014 14:53:50 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[11-Dec-2014 15:04:59 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[11-Dec-2014 15:20:03 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[11-Dec-2014 15:20:07 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonosdet_sql.php on line 34
+[11-Dec-2014 15:20:07 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/area/pagosayabonos/pagosabonosdet_sql.php on line 77
+[11-Dec-2014 18:50:48 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[11-Dec-2014 19:44:40 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[12-Dec-2014 11:51:07 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
+[13-Dec-2014 22:57:23 UTC] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home/cne9836/public_html/inoxpoblete/conexion/funciones.php on line 93
