@@ -1,11 +1,11 @@
 <?php
 require_once("../../conexion/conexion.php");
-// Clase con Funciones para Guia Despacho (venta) General y Específica asociada a Proyecto)
+// Clase con Funciones para Guia Despacho (venta) General y Espcifica asociada a Proyecto)
 
 class cargar_orden
 {
 	//traer los prouctos de la bd
-public function traer_datos($id)
+	public function traer_datos($id)
 	{
 		$salida=array();
 		$query="SELECT * FROM product WHERE CodeBar='$id'";
@@ -79,18 +79,18 @@ QUERY;
 
         $res=mysql_query($query,Conectar::con());
 		
-	//echo $query;
+		//echo $query;
 		$ID = mysql_query("SELECT IdEGuiaDespacho FROM eguiadespacho WHERE IdEGuiaDespacho = LAST_INSERT_ID()",conectar::con());
-    $row = mysql_fetch_array($ID);
+        $row = mysql_fetch_array($ID);
 	
-      return $row;
+        return $row;
     }
     
 	public function insertar_dguia($id_guia,$posicion,$codigo,$descripcion,$cantidad,$descuento,$almacen,$neto,$iva,$monto_impuesto,$tipo_impuesto,$total,$empresa)
 	{
 		$query2=<<<QUERY
 			    INSERT INTO dguiadespacho(
-			   	IdDGuia,
+			   IdDGuia,
 				 IdEGuiaDespacho,
 				 Posicion,
 				 Codigo,
@@ -123,38 +123,37 @@ QUERY;
 QUERY;
 			$res=mysql_query($query2,Conectar::con());
 	}
-
-public function ObtieneOrden()
-	{
-		$guia="";
-		$query= "select * from eguiadespacho";
-		$resul=mysql_query($query,Conectar::con());
-		while($row=mysql_fetch_assoc($resul))
-	{
-		$guia=$row["Numero"];
-	}
-		if(!$guia)
-	{
-		$guia="70000001";
-	}
-	else
-	{
-		$guia= $guia + 1;
-	}
-	return $guia;
-	
-	}
-
 	
 	//disminuir el stock 
-public function Stock($id,$resta,$precio_venta,$precio_compra)
+	public function Stock($id,$resta,$precio_venta,$precio_compra)
 	{
 		$query="UPDATE product SET  UnitsInStock =  '$resta', UnitPrice = '$precio_venta', PurchasePrice = '$precio_compra'   WHERE  product.IDProduct ='$id'";
 		$res=mysql_query($query,Conectar::con());
 	}
-
-
+	
+public function ObtieneOrden()
+	{
+	$Factura="";
+	$query= "select * from eguiadespacho";
+	$resul=mysql_query($query,Conectar::con());
+		while($row=mysql_fetch_assoc($resul))
+				{
+				$Factura=$row["Numero"];
+				}
+		if(!$Factura)
+			{
+				$Factura="70000001";
+			}
+		else
+			{
+				$Factura= $Factura + 1;
+			}
+		return $Factura;
+				
+			}
 }
+}
+
 
 
 ?>

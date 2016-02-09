@@ -19,11 +19,11 @@ class cargar_orden
 	// Referencia = a Proyecto
 	// FechaFacturacion = Fecha Guia
  
-public function insertar_eguia_general($numero,$folio,$factura,$proyecto,$cliente,$forma_pago,$neto,$iva,$impuesto,$total,$fecha_creacion,$fecha_guia,$user,$estado,$empresa,$motivo,$glosa,$estado_contable,$rut_chofer,$nombre_chofer,$patente,$autoriza)
+public function insertar_eguia($numero,$folio,$factura,$proyecto,$cliente,$forma_pago,$neto,$iva,$impuesto,$total,$fecha_creacion,$fecha_guia,$user,$estado,$empresa,$motivo,$glosa,$estado_contable,$rut_chofer,$nombre_chofer,$patente,$autoriza)
     {
         $query=<<<QUERY
-			INSERT INTO eguiadespacho_general(
-			IdEGuiaDespacho_General,
+			INSERT INTO eguiadespacho(
+			IdEGuiaDespacho,
 			Numero,
 			Folio,
 			Factura,
@@ -80,18 +80,18 @@ QUERY;
         $res=mysql_query($query,Conectar::con());
 		
 	//echo $query;
-		$ID = mysql_query("SELECT IdEGuiaDespacho_General FROM eguiadespacho_general WHERE IdEGuiaDespacho_General = LAST_INSERT_ID()",conectar::con());
+		$ID = mysql_query("SELECT IdEGuiaDespacho FROM eguiadespacho WHERE IdEGuiaDespacho = LAST_INSERT_ID()",conectar::con());
     $row = mysql_fetch_array($ID);
 	
       return $row;
     }
     
-	public function insertar_dguia_general($id_guia,$posicion,$codigo,$descripcion,$cantidad,$descuento,$almacen,$neto,$iva,$monto_impuesto,$tipo_impuesto,$total,$empresa)
+	public function insertar_dguia($id_guia,$posicion,$codigo,$descripcion,$cantidad,$descuento,$almacen,$neto,$iva,$monto_impuesto,$tipo_impuesto,$total,$empresa)
 	{
 		$query2=<<<QUERY
-			    INSERT INTO dguiadespacho_general(
-			   IdDGuia_General,
-				 IdEGuiaDespacho_General,
+			    INSERT INTO dguiadespacho(
+			   	IdDGuia,
+				 IdEGuiaDespacho,
 				 Posicion,
 				 Codigo,
 				 Descripcion,
@@ -127,7 +127,7 @@ QUERY;
 public function ObtieneOrden()
 	{
 		$guia="";
-		$query= "select * from eguiadespacho_general";
+		$query= "select * from eguiadespacho";
 		$resul=mysql_query($query,Conectar::con());
 		while($row=mysql_fetch_assoc($resul))
 	{
@@ -135,7 +135,7 @@ public function ObtieneOrden()
 	}
 		if(!$guia)
 	{
-		$guia="7100000001";
+		$guia="70000001";
 	}
 	else
 	{
@@ -147,7 +147,7 @@ public function ObtieneOrden()
 
 	
 	//disminuir el stock 
-	public function Stock($id,$resta,$precio_venta,$precio_compra)
+public function Stock($id,$resta,$precio_venta,$precio_compra)
 	{
 		$query="UPDATE product SET  UnitsInStock =  '$resta', UnitPrice = '$precio_venta', PurchasePrice = '$precio_compra'   WHERE  product.IDProduct ='$id'";
 		$res=mysql_query($query,Conectar::con());

@@ -13,7 +13,7 @@ $tra=new cargar_orden();
 	$contador=$tra->ObtieneOrden();
 	$folio=$_POST["folio"];
 	$proyecto = $_POST["proyecto"];
-  	$cliente="16"; // Cliente Generico
+  	$cliente=$_POST["clientes"];
 	$forma_pago ="1" ; // 30 dias
 	 $neto=$_POST["total"];
 	 $iva =($neto*19)/100;
@@ -73,13 +73,14 @@ $tra->insertar_dguia($id_ultimo[0],$posicion,$codigo,$descripcion,$cantidad,$dec
 			$res=$tra->traer_datos($_POST["codigo"][$i]);
 			$stocks=$res[0]["UnitsInStock"];
 			$ide=$res[0]["IDProduct"];
-			$stockNew=$stocks + $_POST["cantidad"][$i];
+			$stockNew=$stocks - $_POST["cantidad"][$i];
 			$tra->Stock($ide,$stockNew,$precio_venta,$precio_compra);
 		}
 		
 	}
-	$vare="Se Inserto Correctamente";
-	$salida="todo";
+
+	$vare="Se Inserto Correctamente la Guia de Despacho";
+	$salida="Todo";
 	echo json_encode($vare);
 
 	

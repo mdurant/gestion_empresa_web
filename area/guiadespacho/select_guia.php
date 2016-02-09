@@ -88,25 +88,25 @@ FROM trabajador";
     //
 
 public function obtieneguia()
-				{
-				$guia="";
-				$query= "select * from eguiadespacho";
-				$resul=mysql_query($query,Conectar::con());
-				while($row=mysql_fetch_assoc($resul))
-				{
-					$guia=$row["Numero"];
-				}
-				if(!$guia)
-				{
-					$guia="70000001";
-				}
-				else
-				{
-					$guia= $guia + 1;
-				}
-				return $guia;
-				
-				}
+{
+	$guia="";
+	$query= "select * from eguiadespacho";
+	$resul=mysql_query($query,Conectar::con());
+	while($row=mysql_fetch_assoc($resul))
+	{
+		$guia=$row["Numero"];
+	}
+	if(!$guia)
+	{
+		$guia="70000001";
+	}
+	else
+	{
+		$guia= $guia + 1;
+	}
+	return $guia;
+
+}
     public function code_autocomplete()
 		{
 			$salida=array();
@@ -147,6 +147,18 @@ public function obtieneguia()
 	       almacen
 	       where 
 	       Nombre <='0100'";
+		$res=mysql_query($query,Conectar::con());
+		while($row=mysql_fetch_assoc($res))
+		{
+			$salida[]=$row;
+		}
+		return $salida;
+	}
+
+public function clientes() // Se modifica query para apuntar s—lo a la 0100/Central - Mauricio
+	{
+		$salida=array();
+		$query="Select * from customers";
 		$res=mysql_query($query,Conectar::con());
 		while($row=mysql_fetch_assoc($res))
 		{

@@ -59,8 +59,9 @@ if($_GET["IdEGuiaDespacho"])
 
     $accion="crear";
 
-    $contador=$guia->obtieneguia();
+    $obtieneguia=$guia->obtieneguia();
     $empresa=$guia->empresas();
+    $clientes=$guia->clientes();
     $almacen=$guia->almacen();
     $trabajadores=$guia->trabajadores();
     $res6=$guia->code_autocomplete();
@@ -151,28 +152,37 @@ if($_GET["IdEGuiaDespacho"])
                 <tr>
                 <td style="width:110px"><label>Contador</label></td>
                 <td style="width:150px;">
-                    <input <?=$deshabilitar?>  disabled type="text" name="contador" style="width: 100%" class="form-control input-sm ui-corner-all"  id="contador" value="<?=$contador?>" tabindex="1" />
+                    <input <?=$deshabilitar?>  disabled type="text" name="contador" style="width: 100%" class="form-control input-sm ui-corner-all"  id="contador" value="<?=$obtieneguia?>" tabindex="1" />
                 </td>
                 <td style="width:100px;" align="left"><label>Cliente</label></td>
                 <td style="width:280px;">
                   <table>
                             <tr>
-                                <td style="width: 280px;">
-                                     <input disabled style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="cliente" id="cliente"  value="Cliente Asignado al Proyecto"  tabindex="2" />
-                                </td>
+                                <select name="clientes" id="clientes" style="width: 100%" class="span2"  value="" tabindex="4">
+                                  <option value="0">--Seleccionar--</option>
+                                  <?php
+                                    for($a=0;$a<sizeof($clientes);$a++)
+                                    {
+                                  ?>
+                                  <option value="<?=$clientes[$a]["IDCliente"]?>"><?=strtoupper($clientes[$a]["Cliente"])?></option>
+                                  <?php
+                                  }
+                                  ?>
+
+                           </select>
                                 
                             </tr>
                         </table>
                 </td>
                 <td style="width:80px;" align="center"><label>Glosa</label></td>
                 <td rowspan="4">
-                    <textarea style="width: 100%" class="form-control input-sm ui-corner-all" id="glosa" name="glosa" cols="20" rows="6"  tabindex="11"><?=$ord[0]["glosa"]?></textarea>
+                    <textarea style="width: 100%" class="form-control input-sm ui-corner-all" id="glosa" name="glosa" cols="20" rows="6"  tabindex="11" style="text-transform:uppercase;"><?=$ord[0]["glosa"]?></textarea>
                 </td>
                 </tr>
                 <tr>
                 <td><label>Folio Nº</label></td>
                 <td align="center">
-                    <input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="folio" id="folio"  tabindex="3" />
+                    <input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="folio" id="folio"  tabindex="3"  style="text-transform:uppercase;" />
                     <div id="resultado"></div>
                 </td>
                 <td><?php if ($accion=='crear'){ ?><label>Proyecto</label><?php } ?></td>
@@ -180,15 +190,15 @@ if($_GET["IdEGuiaDespacho"])
                     <table>
                         <tr>
                            <select name="proyecto" id="proyecto" style="width: 100%" class="span2"  value="" tabindex="4">
-                                    <option value="0">--Seleccionar--</option>
-                                    <?php
-                                    for($a=0;$a<sizeof($proy);$a++)
-                                    {
-                                    ?>
-                                    <option value="<?=$proy[$a]["id_proyecto"]?>"><?=strtoupper($proy[$a]["nombre_proyecto"])?></option>
-                                    <?php
-                                    }
-                                    ?>
+                              <option value="0">--Seleccionar--</option>
+                              <?php
+                              for($a=0;$a<sizeof($proy);$a++)
+                              {
+                              ?>
+                              <option value="<?=$proy[$a]["id_proyecto"]?>"><?=strtoupper($proy[$a]["nombre_proyecto"])?></option>
+                              <?php
+                              }
+                              ?>
 
                            </select>
                         </tr>
@@ -225,18 +235,18 @@ if($_GET["IdEGuiaDespacho"])
 
                 <td ><label>Rut Chofer</label></td>
                 <td >
-                  <input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="rut_chofer" id="rut_chofer" tabindex="7" />
+                  <input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="rut_chofer" id="rut_chofer" tabindex="7" style="text-transform:uppercase;" />
                 </td>
-				
-				<td ><label>Nombre Chofer</label></td>
+                
+                <td ><label>Nombre Chofer</label></td>
                 <td >
-                  <input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="nombre_chofer" id="nombre_chofer"  tabindex="8" />
+                  <input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="nombre_chofer" id="nombre_chofer"  tabindex="8"  style="text-transform:uppercase;" />
                 </td>
             
             </tr>
             <tr>
                <td><label>Placa Patente</label></td>
-               <td><input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="placa_patente" id="placa_patente" tabindex="9" /></td>
+               <td><input style="width: 100%" class="form-control input-sm ui-corner-all" type="text" name="placa_patente" id="placa_patente" tabindex="9" style="text-transform:uppercase;" /></td>
                <td><label>Quien Autoriza</label></td>
                <td>
                <select name="autoriza" id="autoriza" style="width: 100%" class="span2"  value="" tabindex="10">
@@ -502,10 +512,6 @@ if($_GET["IdEGuiaDespacho"])
         <div id="modal1" style="display:none;">
             <textarea class="form-control input-sm " id="descripciones_dialog"   cols= "60" rows="30"  style="width: 973px; height: 300px;" ></textarea>
         </div>
-        <div id="dialogcliente" style="display:none;">
-            <iframe src="../../crud/clientes_main.php" width="100%" height="100%"></iframe>
-          
-        </div>
 </body>
 </html>
 <script>
@@ -549,28 +555,20 @@ var consulta;
 $("#proyecto").select2();
 $("#motivo").select2();
 $("#autoriza").select2();
+$("#clientes").select2();
     
   // Moneda
   function Moneda(entrada){
-	var num = entrada.replace(/\./g,"");
-	if(!isNaN(num)){
-	num = num.toString().split("").reverse().join("").replace(/(?=\d*\.?)(\d{3})/g,"$1.");
-	num = num.split("").reverse().join("").replace(/^[\.]/,"");
-	entrada = num;
-	}else{
-	entrada = input.value.replace(/[^\d\.]*/g,"");
-	}
-	return entrada;
-	}			
-
-  
-    
-//     $('#rut_chofer').Rut({
-//       on_error: function(){ alert('Rut del Chofer es Incorrecto !'); }
-      
-// });
-    
-
+    var num = entrada.replace(/\./g,"");
+    if(!isNaN(num)){
+    num = num.toString().split("").reverse().join("").replace(/(?=\d*\.?)(\d{3})/g,"$1.");
+    num = num.split("").reverse().join("").replace(/^[\.]/,"");
+    entrada = num;
+    }else{
+    entrada = input.value.replace(/[^\d\.]*/g,"");
+    }
+    return entrada;
+    }           
 
       $("#btn-volver").on("click", function() {
 
@@ -587,55 +585,6 @@ $("#autoriza").select2();
       for (i = 0; i < $("#ctrl_pases").val(); i++) {
           $("select#bodega").eq(i).val($("select#bodega").eq(i).parent().parent().parent().children("td:eq(5)").text());
       }
-
-
-      //trabajo con el nuevo modal
-
-
-
-      //clientes
-      $("#dialogcliente").dialog({
-          autoOpen: false,
-          width: 1000,
-          height: 500,
-          position: ['middle', 20],
-          show: {
-              effect: "fade",
-              duration: 500
-          },
-          hide: {
-              effect: "fade",
-              duration: 500
-          },
-          modal: true,
-          buttons: {
-              "Cerrar": function() {
-                  $.ajax({
-
-                      async: true,
-                      cache: false,
-                      type: "GET",
-                      dataType: "json",
-                      url: "select_orden.php?action=clientes",
-                      success: function(response) {
-                          clientess = response.Options;
-                          $("#clientes").empty();
-                          for (var i = 0; i < clientess.length; i++) {
-                              $("#clientes").append("<option value='" + clientess[i].Value + "'>" + clientess[i].DisplayText + "</option>")
-                          }
-                      }
-                  });
-                  $("#dialogcliente").dialog("close");
-              }
-          }
-      });
-
-      $("#opencliente").on("click", function() {
-
-          $("#dialogcliente").dialog("open");
-      });
-
-
 
       $("#modal1").dialog({
           autoOpen: false,
@@ -683,17 +632,6 @@ $("#autoriza").select2();
 
       }
 
-
-        //validar para cliente
-        idcliente = '<?=$ord[0]["id_cliente"]?>';
-
-        if(idcliente=='')
-        {
-
-        }else
-        {
-            $("#clientes").val(idcliente);
-        }
 
          $("#btn-volver").on("click", function(){
             window.location = "./ordencrud_main.php";
