@@ -6,10 +6,10 @@ session_start();
 
 $IDEmpresa = $_SESSION['SESS_EMPRESA_ID'];
 
-$query="SELECT IDEmpresa, 
+$query="SELECT IDEmpresa,
       RUT, RazonSocial
       FROM empresa
-      WHERE 
+      WHERE
       empresa.IDEmpresa = '$IDEmpresa'";
 $res = mysql_query($query,conectar::con());
 $dato = mysql_fetch_assoc($res);
@@ -37,14 +37,14 @@ $dato = mysql_fetch_assoc($res);
                   </div>
                   <div>
                     Versión <?=$_SESSION['SESS_VERSION']?>
-                  </div>                  
+                  </div>
               </div>
         </td>
         </tr>
         <tr colspan="2">
         <td></td>
       </tr>
-    </table>     
+    </table>
       <ul class="nav" id="color2" style="width:100%">
         <li class="dropdown" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -60,7 +60,7 @@ $dato = mysql_fetch_assoc($res);
               <i class="glyphicon glyphicon-list-alt"></i> Notas Credito</a></li>
                   <li class="dropdown submenu">
                    <a href="#" class="dropdown-toggle" data toggle="dropdown">
-                    <i class="glyphicon glyphicon-inbox"></i> Gestión Ventas</a> 
+                    <i class="glyphicon glyphicon-inbox"></i> Gestión Ventas</a>
                    <ul class="dropdown-menu submenu-show submenu-hide">
                       <li><a href="area/guiadespacho/ordencrud_main.php" class="tabulador" title="Guía de Despacho">Guía de Despacho</a></li>
                       <li><a href="area/guiadespacho_generica/ordencrud_main.php" class="tabulador" title="Guía de Despacho Genérica">Guía de Despacho Genérica</a></li>
@@ -73,12 +73,12 @@ $dato = mysql_fetch_assoc($res);
 
                   <li class="dropdown submenu">
                    <a href="#" class="dropdown-toogle" data toggle="dropdown">
-                    <i class="glyphicon glyphicon-bookmark"></i> Gestión Cotización</a> 
+                    <i class="glyphicon glyphicon-bookmark"></i> Gestión Cotización</a>
                    <ul class="dropdown-menu submenu-show submenu-hide">
                       <li><a href="area/cotizacion/cotizacioncrud_main.php" class="tabulador" title="Cotizaciones">Cotizaciones</a></li>
                       <li><a href="area/cotizacion/aplazar_cotizacioncrud_main.php" class="tabulador" title="Cotizaciones: Aplazar">Aplazar</a></li>
                       <li><a href="area/cotizacion/seguimiento_cotizacioncrud_main.php" class="tabulador" title="Cotizaciones: Seguimiento Simple">Seguimiento Simple</a></li>
-                      
+
                    </ul>
                   </li>
 
@@ -90,7 +90,7 @@ $dato = mysql_fetch_assoc($res);
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="glyphicon glyphicon-flag"></i> Gestión Compras</a>
                        <ul class="dropdown-menu submenu-show submenu-hide">
-                        
+
                          <li><a href="area/guiacompra/ordencrud_main.php" class="tabulador" title="Compras con Guia Despacho">Guia Despacho</a></li>
                          <li><a href="area/compras/compracrud_main.php" class="tabulador" title="Compras con Factura">Facturas</a></li>
                          <li><a href="area/compras-boleta/compracrud_main.php" class="tabulador" title="Compras con Boleta">Boletas</a></li>
@@ -98,12 +98,12 @@ $dato = mysql_fetch_assoc($res);
                          <li><a href="crud/combustible_main.php" class="tabulador" title="Compra Combustible">Combustible</a></li>
                        </ul>
                     </li>
-                
-                  
+
+
             </ul>
           </li>
         <li class="dropdown">
-        
+
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="icon-lock icon-white"></i>
               Operaciones
@@ -125,7 +125,7 @@ $dato = mysql_fetch_assoc($res);
               <li class="nav-header">Solicitudes a Bodega</li>
               <li><a href="area/solicitudes_bodega/solicitudescrud_main.php"  class="tabulador" title="Bodega: Solicitud de Productos">
               <i class="glyphicon glyphicon-tags"></i> Bodega : Solicitudes a Bodega</a></li>
-              
+
 
             </ul>
           </li>
@@ -150,14 +150,14 @@ $dato = mysql_fetch_assoc($res);
                 <a href="crud/proyectos_main.php" class="tabulador" title="Mantenedor Proyectos">
                      <i class="glyphicon glyphicon-time"></i> Mantenedor Proyectos</a></li>
               <li><a href="area/OrdenTrabajo/ordencrud_main.php" class="tabulador" title="Gesti&oacute;n OTrdenes de Trabajo">
-              <i class="glyphicon glyphicon-download-alt"></i> Gestión de OT</a></li>
+              <i class="glyphicon glyphicon-download-alt"></i> Gestión de Proyectos</a></li>
               <li><a href="area/OrdenTrabajo/vbuenocrud_main.php" class="tabulador" title="Seguimiento Ordenes de Trabajo">
-              <i class="glyphicon glyphicon-bookmark"></i> Seguimiento OT</a></li>
+              <i class="glyphicon glyphicon-bookmark"></i> Seguimiento Proyectos</a></li>
               <li><a href="area/OrdenTrabajo/plantillacrud_main.php" class="tabulador" title="Plantillas de Proyectos">
               <i class="glyphicon glyphicon-magnet"></i> Plantillas de Proyectos</a></li>
               <li><a href="area/servicios_a_proyectos/ordencrud_main.php" class="tabulador" title="Asociar Servicios a Proyectos">
               <i class="glyphicon glyphicon-retweet"></i> Asociar Servicios->Proyectos</a></li>
-             
+
             </ul>
           </li>
         <li class="dropdown">
@@ -184,8 +184,8 @@ $dato = mysql_fetch_assoc($res);
               <li class="disabled"><a href="#">Seguimiento OT</a></li>
               <li class="disabled"><a href="#">Lista OT Rango Fecha</a></li>
               <li class=""><a href="area/servicios_a_proyectos/activoscrud_main.php" class="tabulador" title="Reporte Activos a Proyectos">Solicitudes Activos a Proyectos</a></li>
-          
-          
+
+
             </ul>
           </li>
         <li class="dropdown">
@@ -199,13 +199,13 @@ $dato = mysql_fetch_assoc($res);
                 <li class="dropdown submenu">
                    <a href="#" class="dropdown-toogle" data toggle="dropdown">
                       <i class="glyphicon glyphicon-briefcase"></i> Bodega/Almacen
-                   </a> 
+                   </a>
                    <ul class="dropdown-menu submenu-show submenu-hide">
                     <li><a href='crud/almacen_main.php' class='tabulador' title='Almacenes'>Almacenes</a></li>
                     <li><a href='crud/unidadmedida_main.php' class='tabulador' title='Unidad de Medidas'>Unidad de Medidas</a></li>                  </ul>
-                </li>                 
-            
-            
+                </li>
+
+
                 <li><a href='crud/formapago_main.php' class='tabulador' title='Formas de Pago'>
                 <i class="glyphicon glyphicon-usd"></i> Formas de Pago</a></li>
                 <li><a href='crud/centro_costo_main.php' class='tabulador' title='Centros de Costos'>
@@ -218,7 +218,7 @@ $dato = mysql_fetch_assoc($res);
                 <i class="glyphicon glyphicon-eye-open"></i> Jefaturas</a></li>
                 <li><a href='crud/trabajadores_main.php' class='tabulador' title='Trabajadores'>
                 <i class="glyphicon glyphicon-user"></i> Trabajadores</a></li>
-      
+
             </ul>
           </li>
 
@@ -229,25 +229,25 @@ $dato = mysql_fetch_assoc($res);
               <b class="caret"></b>
             </a>
 
-                            
+
             <ul class="dropdown-menu">
-              
+
                 <li><a href='crud/empresas_main.php' class='tabulador' title='Empresas'>Empresas</a></li>
                 <li><a href='crud/sucursales_main.php' class='tabulador' title='Sucursales'>Sucursales</a></li>
                 <li class="dropdown submenu">
-                   <a href="#" class="dropdown-toogle" data toggle="dropdown">Seguridad</a> 
+                   <a href="#" class="dropdown-toogle" data toggle="dropdown">Seguridad</a>
                    <ul class="dropdown-menu submenu-show submenu-hide">
                       <li><a href='crud/usuarios_main.php' class='tabulador' title='Usuarios'>Usuarios</a></li>
                       <li><a href='crud/perfiles_main.php' class='tabulador' title='Perfiles de Usuarios'>Perfiles de Usuarios</a></li>
                       <li><a href='crud/modulos_main.php' class='tabulador' title='Modulos del Sistema'>Modulos del Sistema</a></li>
                    </ul>
                 </li>
-              
+
               <li><a href="logout.php?ID=<?php echo session_id()?>">Cerrar Sistema</a>
             </ul>
           </li>
 
-       
+
       </ul>
     </div>
   </div>

@@ -6,7 +6,6 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
 
 ?>
 
-
 <!doctype html>
 <html>
 <head>
@@ -16,23 +15,23 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
     <!-- bootstrap -->
     <script src="../scripts/bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <link  href="../scripts/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    
+
 	<!-- jquery -->
 	<script src="../scripts/jquery/jquery.js" type="text/javascript"></script>
     <script src="../scripts/jquery/jquery-ui.js" type="text/javascript"></script>
+    <script src="../scripts/jquery-ui.datepicker-es.js" type="text/javascript"></script>
     <link  href="../scripts/jquery/themes/<?=$ACTUAL_THEME?>/jquery-ui.css" rel="stylesheet" type="text/css" />
-	
+
     <!-- jtable -->
 	<script src="../scripts/jtable/jquery.jtable.js" type="text/javascript"></script>
     <script src="../scripts/jtable/jquery.jtable.es.js" type="text/javascript"></script>
+
     <link  href="../scripts/jtable/themes/<?=$JTABLE_THEME?>" rel="stylesheet" type="text/css" />
-    
+
     <!-- jquery.validationEngine -->
 	<script src="../scripts/jquery/validate/jquery.validationEngine.js" type="text/javascript" ></script>
     <script src="../scripts/jquery/validate/jquery.validationEngine-es.js" type="text/javascript"></script>
     <link  href="../scripts/jquery/validate/validationEngine.jquery.css" rel="stylesheet" type="text/css" />
-
-
 </head>
 <style>
 
@@ -51,7 +50,7 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
 			    <td><input type="text" id="proyecto" name="proyecto" style="width:100%" placeholder="" class="form-control input-sm ui-corner-all "></td>
 			</tr>
 		    </tbody></table>
-		    
+
 		</td>
 		<td width="20%" align="center">
 		<table style="width: 130px;">
@@ -83,7 +82,7 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
  <div style="height: 5px;width: 100%;"></div>
 
 <div id="jt_proyectos" style="width: 100%;"></div>
-        
+
     <script type="text/javascript">
 		$(document).ready(function() {
 		    //Prepare jTable
@@ -127,53 +126,54 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
 			    }]
 			},
 			fields: {
-			    id_proyecto: {
+			  id_proyecto: {
 				key: true,
 				create: false,
 				edit: false,
 				list: false
-			    },
-			    nombre_proyecto: {
+			  },
+
+			  nombre_proyecto: {
 				title: 'Proyecto',
 				width: '25%'
-			    },
-			    id_cliente: {
+			  },
+
+		    id_cliente: {
 				title: 'Cliente',
 				width: '20%',
 				options: 'proyectos_sql.php?action=clientes',
 				list: true
-			    },
-			    fecha_inicio:{
+		    },
+
+		    fecha_inicio:{
 				title:'Fecha Inicio',
 				width:'15%',
 				type:'date',
 				displayFormat:'dd-mm-yy',
-	    			list: true,
+  			list: true,
 				inputClass: 'validate[required,custom[date]]'
-			    },
-			    
-			    fecha_compromiso:{
+			  },
+
+		    fecha_compromiso:{
 				title:'Fecha Compromiso',
 				width:'15%',
 				type:'date',
 				displayFormat:'dd-mm-yy',
-	    			list: true
-			    },
-			    Estado:{
+  			list: true
+			  },
+
+			  Estado:{
 				title:'Estado',
 				width:'15%',
 				create:'false',
 				edit:'true',
 				list: true,
 				options:{
-				    'activo': 'Activo',
-				    'inactivo': 'Inactivo'
-				}
-				
-				
-				
-			    }
-			    
+		    	'activo': 'Activo',
+			    'inactivo': 'Inactivo'
+					}
+
+		    }
 
 			},
 			formCreated: function(event, data) {
@@ -207,7 +207,7 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
 			$('#jt_proyectos').jtable('load', {
 			    proyecto: $('#proyecto').val(),
 			    inactivo: $('#chkinactivo').val()
-			    
+
 			});
 		    });
 		    //eliminar
@@ -215,7 +215,7 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
 			var $selectedRows = $('#jt_proyectos').jtable('selectedRows');
 			$('#jt_proyectos').jtable('deleteRows', $selectedRows);
 		    });
-		    
+
 		    $('#chkinactivo').on('change', function() {
 		    // From the other examples
 		    if (!this.checked) {
@@ -224,8 +224,6 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
 		      $('#chkinactivo').val("2");
 		    }
 		  });
-		    
-		    
 
 		});
     </script>
