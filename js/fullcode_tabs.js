@@ -1,50 +1,49 @@
- $(document).ready(function() {
+$(document).ready(function() {
            
-		    var tabTitle = $("#tab_title"),
-			tabContent = $("#tab_content"),
-			tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
-			tabCounter = 2,
-			tabCounter2 = 0,
-			tabCountertab = 0;
+     var tabTitle = $("#tab_title"),
+	tabContent = $("#tab_content"),
+	tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
+	tabCounter = 2,
+	tabCounter2 = 0,
+	tabCountertab = 0;
+  
+     var tabs = $("#tabs").tabs();
 	    
-		    var tabs = $("#tabs").tabs();
-	    
-		    $(".tabulador").on('click', function(event) {
-			    event.preventDefault();
-			    var links = $(this).attr('href');
-			    var vTITLE = $(this).attr('title');
-			    //alert(vTITLE)
-			    //alert(tabCounter2+"a");
-			    //alert(tabCountertab+"b");
-			    if ($("#oculto_tab").val() == 0 && tabCounter2 == 0) {
-				    $("#tabu").empty();
-				    tabCountertab++;
-				    var hola = addTab(links, vTITLE);
-				    $("#tabs").tabs("option", "active", Number($("#oculto_tab").val()));
-	    
-				    //tabCounter2++;
-				    //alert("estoyaqui");
-				    //alert(tabCounter2);
-				    //$("#oculto_tab").val(Number($("#oculto_tab").val())+1);
-			    } else if ($("#oculto_tab").val() <= 0 && tabCounter2 > 0 && tabCountertab == 0) {
-				    //$("#tabu").empty();
-				    var hola = addTab(links, vTITLE);
-				    $("#tabs").tabs("option", "active", Number($("#oculto_tab").val()));
-				    $("#oculto_tab").val(Number($("#oculto_tab").val()) + 1);
-				    tabCounter2 = 0;
-				    tabCountertab++;
-				    //alert("estyaquidos");
-			    } else {
-				    //alert($("#oculto_tab").val());
-				    var hola = addTab(links, vTITLE);
-				    $("#tabs").tabs("option", "active", Number($("#oculto_tab").val()));
-				    //alert(tabCounter2);
-				    //alert("estoyaqui3");
-			    }
-			    //$( "#tabs" ).tabs( "option", "active", $("#contador").val() );
-
-	    
-		    });
+	    $(".tabulador").on('click', function(event) {
+		    event.preventDefault();
+		    var links = $(this).attr('href');
+		    var vTITLE = $(this).attr('title');
+		    //alert(vTITLE)
+		    //alert(tabCounter2+"a");
+		    //alert(tabCountertab+"b");
+		    if ($("#oculto_tab").val() == 0 && tabCounter2 == 0) {
+			    $("#tabu").empty();
+			    tabCountertab++;
+			    var hola = addTab(links, vTITLE);
+			    $("#tabs").tabs("option", "active", Number($("#oculto_tab").val()));
+    
+			    //tabCounter2++;
+			    //alert("estoyaqui");
+			    //alert(tabCounter2);
+			    //$("#oculto_tab").val(Number($("#oculto_tab").val())+1);
+		    } else if ($("#oculto_tab").val() <= 0 && tabCounter2 > 0 && tabCountertab == 0) {
+			    //$("#tabu").empty();
+			    var hola = addTab(links, vTITLE);
+			    $("#tabs").tabs("option", "active", Number($("#oculto_tab").val()));
+			    $("#oculto_tab").val(Number($("#oculto_tab").val()) + 1);
+			    tabCounter2 = 0;
+			    tabCountertab++;
+			    //alert("estyaquidos");
+		    } else {
+			    //alert($("#oculto_tab").val());
+			    var hola = addTab(links, vTITLE);
+			    $("#tabs").tabs("option", "active", Number($("#oculto_tab").val()));
+			    //alert(tabCounter2);
+			    //alert("estoyaqui3");
+		    }
+		    //$( "#tabs" ).tabs( "option", "active", $("#contador").val() );
+    
+	    });
 	    
 	    
 		    //para añadir la super tab
@@ -127,4 +126,4 @@
 			    
 			    });
 		    
-	    });
+	 });
