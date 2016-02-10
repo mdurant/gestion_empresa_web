@@ -1,0 +1,58 @@
+body {
+
+  -webkit-background-size:cover;
+  background:url(../img/bg1.jpg) 50% 50% / cover no-repeat fixed;
+  color:#393939;
+  font-family:'Open Sans';
+  font-size:14px;
+  height:100%;
+  margin:0;
+  padding:0;
+
+}
+h1, h2, h3 {
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.logo{
+  margin: 60px auto 0;
+  padding: 15px;
+  text-align: center;
+
+  }
+.contenido{
+  background: url("../img/bg-white-lock.png") repeat scroll 0 0 transparent;
+  margin: 0 auto;
+  z-index:3;
+  border-radius: 6px 6px 6px 6px;
+}
+.form-title{
+  font-family:'Open Sans';
+  font-size:20px;
+  line-height:120%;
+  font-weight:bold;
+  color:rgb(255,255,255);
+  text-align:left;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.9);
+
+}
+
+h3{
+  color:#FFF;
+}
+.titulo{
+  text-align: center;
+  color: #D4E8EE;
+  font-family:'Open Sans';
+  font-size:14px;
+}
+.footer{
+  z-index:2;
+  width:100%;
+  height: 300px;
+}
+h4{
+  font-size:11px;
+  text-align: center;
+  color: #D4E8EE;
+}
