@@ -20,21 +20,21 @@ $res = $tra->code_autocomplete();
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    
+
     <!-- bootstrap -->
     <script src="../scripts/bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <link  href="../scripts/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    
+
 	<!-- jquery -->
     <script src="../scripts/jquery/jquery.js" type="text/javascript"></script>
     <script src="../scripts/jquery/jquery-ui.js" type="text/javascript"></script>
     <link  href="../scripts/jquery/themes/<?=$ACTUAL_THEME?>/jquery-ui.css" rel="stylesheet" type="text/css" />
-	
+
     <!-- jtable -->
     <script src="../scripts/jtable/jquery.jtable.js" type="text/javascript"></script>
     <script src="../scripts/jtable/jquery.jtable.es.js" type="text/javascript"></script>
     <link  href="../scripts/jtable/themes/<?=$JTABLE_THEME?>" rel="stylesheet" type="text/css" />
-    
+
    <!-- jquery.validationEngine -->
     <script src="../scripts/jquery/validate/jquery.validationEngine.js" type="text/javascript" ></script>
     <script src="../scripts/jquery/validate/jquery.validationEngine-es.js" type="text/javascript"></script>
@@ -75,19 +75,19 @@ form.jtable-dialog-form {
 			<tbody><tr>
 			    <td><h5 style="width:30px">Buscar </h5></td>
 			    <td><input type="text" id="nombreproducto[]" value ="" name="nombreproducto" style="width:100%" placeholder="Nombre del Producto" class="form-control input-sm caja_cod cod typeahead cod_complete" data-provide="typeahead"></td>
-				
+
 			</tr>
 		    </tbody>
 		    </table>
-		    
+
 		</td>
-		
+
 		<td width="20%" align="center">
-		    <button style="height: 30px; width: 100px" aria-disabled="false" role="button"
-			    class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary"
-			    id="btnBUSCAR" type="submit">
-		    <span class="ui-icon ui-icon-search"></span>
-		    <span class="ui-button-text">Buscar</span>
+	    <button style="height: 30px; width: 100px" aria-disabled="false" role="button"
+		    class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary"
+		    id="btnBUSCAR" type="submit">
+	    <span class="ui-icon ui-icon-search"></span>
+	    <span class="ui-button-text">Buscar</span>
 
 		</button></td>
 
@@ -107,7 +107,7 @@ form.jtable-dialog-form {
 	</div>
 </div>
 
-        
+
 <script type="text/javascript">
 
 $(document).ready(function () {
@@ -138,7 +138,7 @@ $(".cod_complete").autocomplete({
 		    			document.location.href = 'movimientos_productos_sql.php?action=exportar-excel';
 		    		}
 		    	}]
-			  
+
 		    },
 		    actions: {
 			    listAction:	  'movimientos_productos_sql.php?action=list'
@@ -181,9 +181,9 @@ $(".cod_complete").autocomplete({
 				    width: '5%',
 				    list: true
 			    },
-			    
-			    
-			    
+
+
+
 		    },
 
 
@@ -202,14 +202,14 @@ $(".cod_complete").autocomplete({
 		    selectingCheckboxes: true, //Show checkboxes on first column
 		    //selectOnRowClick: true, //Enable this to only select using checkboxes
 		    toolbar: {
-			  
+
 			  items: [{
 		    		icon :'excel.png',
 		    		text : 'Exportar Excel',
 		    		click : function(){
 		    			//alert ("holaaa");
 		    			window.location = 'movimientos_productos_sql.php?action=exportar-excel';
-		    			
+
 		    		}
 		    	}]
 		    },
@@ -254,18 +254,18 @@ $(".cod_complete").autocomplete({
 				    width: '20%',
 				    list: true
 			    },
-			    
-			    
-			    
+
+
+
 		    },
 
 
-	    });  
-		  
+	    });
+
 	    //load data master movimiento productos (entrada-salida)
 	    $('#jt_mov_productos').jtable('load');
 	    $('#jt_mov_productos_salida').jtable('load');
-	    
+
 	    //buscar por clientes
 	    $('#btnBUSCAR').on('click',function(e) {
 		    e.preventDefault();
@@ -273,18 +273,18 @@ $(".cod_complete").autocomplete({
 
 	    $('#jt_mov_productos').jtable('load', {
 			nombreproducto: $('.cod_complete').val()
-			
+
 		    });
 	    $('#jt_mov_productos_salida').jtable('load', {
 			nombreproducto: $('.cod_complete').val()
-			
+
 		    });
 	    });
-			   
+
     });
-        
-      
-      
+
+
+
 </script>
 
 </body>

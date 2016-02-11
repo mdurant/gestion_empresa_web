@@ -6,6 +6,11 @@ $JTABLE_THEME=$_SESSION['SESS_JTABLE_THEME'];
 
 $IDEmpresas = $_SESSION['SESS_EMPRESA_ID']; //$_GET['IDEmpresa'];
 
+require_once("lista_proyectos_valorizados.php");
+
+$tra=new select();
+$res = $tra->code_autocomplete();
+
 ?>
 <!doctype html>
 <html>
@@ -55,11 +60,13 @@ $IDEmpresas = $_SESSION['SESS_EMPRESA_ID']; //$_GET['IDEmpresa'];
 	    <tbody><tr>
 		<td width="60%">
 		    <table width="100%">
-			<tbody><tr>
-			    <td><h5 style="width:30px">Buscar </h5></td>
-			    <td><input type="text" id="proyecto_valorizado" name="proyecto_valorizado" style="width:100%" placeholder="" class="form-control input-sm ui-corner-all "></td>
-			</tr>
-		    </tbody></table>
+			   <tbody>
+          <tr>
+  			    <td><h5 style="width:30px">Buscar </h5></td>
+  			    <td><input type="text" id="proyecto_valorizado[]" name="proyecto_valorizado" style="width:100%" placeholder="Nombre del Proyecto" class="form-control input-sm ui-corner-all cod typeahead cod_complete" data-provide="typeahead"></td>
+			     </tr>
+		      </tbody>
+        </table>
 
 		</td>
 		<td width="20%" align="center">
@@ -94,7 +101,11 @@ $IDEmpresas = $_SESSION['SESS_EMPRESA_ID']; //$_GET['IDEmpresa'];
 
 <script type="text/javascript">
 
-		$(document).ready(function() {
+		$(document).ready(function () {
+      var availableTags = <?=json_encode($res);?>;
+    $(".cod_complete").autocomplete({
+      source: availableTags
+    });
 
 			//Prepare jTable
 			$('#jt_proyectos_valorizados').jtable({
@@ -183,7 +194,7 @@ $IDEmpresas = $_SESSION['SESS_EMPRESA_ID']; //$_GET['IDEmpresa'];
 				},
 
 				recordsLoaded: function() {
-					$(".jtable-toolbar").attr("id", "minuevoidmaslargoque");
+					$(".jtable-toolbar").attr("id", "");
 				}
 
 
@@ -196,11 +207,18 @@ $IDEmpresas = $_SESSION['SESS_EMPRESA_ID']; //$_GET['IDEmpresa'];
 			//buscar por clientes
 			$('#btnBUSCAR').on('click', function(e) {
 				e.preventDefault();
-				$('#jt_proyectos_valorizados').jtable('load', {
-					ordenes: $('#ordenes').val()
 
-				});
+			$('#jt_proyectos_valorizados').jtable('load', {
+				proyecto_valorizado: $('.cod_complete').val()
+
 			});
+
+       $('#jt_proyectos_valorizados').jtable('load', {
+        proyecto_valorizado: $('.cod_complete').val()
+
+      });
+
+      });
 			//Initialize validation logic when a form is created
 
 			$("#inicio").datepicker({
