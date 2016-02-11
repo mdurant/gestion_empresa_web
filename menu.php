@@ -23,22 +23,22 @@ $dato = mysql_fetch_assoc($res);
       <tr>
         <td style="width:60%"><a  href="#" class="brand"><strong><small>Sistema de Gestión Administrativo - Empresa SOC. INOX POBLETE LTDA.</small></strong></a></td>
         <td style="width:50%" align="right">
-              <div id="color1" >
-                  <div >
-                    * Empresa de Trabajo:
-                    <strong style="color:rgb(229,96,59);text-shadow:1px 1px 1px rgb(0,0,0);">
-                    <?php echo $dato['RazonSocial'];?>
-                    </strong>
-                  </div>
-                  <div >
-                    * Acceso Usuario: <strong style="color:rgb(229,96,59);text-shadow:1px 1px 1px rgb(0,0,0);">
-                    <?php echo $_SESSION['SESS_USERNAME'].' ('.$_SESSION['SESS_PERFILNOMBRE'].')';?>
-                    </strong>
-                  </div>
-                  <div>
-                    Versión <?=$_SESSION['SESS_VERSION']?>
-                  </div>
-              </div>
+          <div id="color1" >
+            <div>
+              * Empresa de Trabajo:
+              <strong style="color:rgb(229,96,59);text-shadow:1px 1px 1px rgb(0,0,0);">
+              <?php echo $dato['RazonSocial'];?>
+              </strong>
+            </div>
+            <div >
+              * Acceso Usuario: <strong style="color:rgb(229,96,59);text-shadow:1px 1px 1px rgb(0,0,0);">
+              <?php echo $_SESSION['SESS_USERNAME'].' ('.$_SESSION['SESS_PERFILNOMBRE'].')';?>
+              </strong>
+            </div>
+            <div>
+              Versión <?=$_SESSION['SESS_VERSION']?>
+            </div>
+          </div>
         </td>
         </tr>
         <tr colspan="2">
@@ -184,6 +184,7 @@ $dato = mysql_fetch_assoc($res);
               <li class="disabled"><a href="#">Seguimiento OT</a></li>
               <li class="disabled"><a href="#">Lista OT Rango Fecha</a></li>
               <li class=""><a href="area/servicios_a_proyectos/activoscrud_main.php" class="tabulador" title="Reporte Activos a Proyectos">Solicitudes Activos a Proyectos</a></li>
+              <li class=""><a href="area/Proyectos/proyectosvalorizadoscrud_main.php" class="tabulador" title="Reporte Valorizado Proyectos">Reporte Valorizado Proyectos</a></li>
 
 
             </ul>
